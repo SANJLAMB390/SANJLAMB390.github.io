@@ -1,0 +1,96 @@
+nav {
+    text-align: center;
+    color: white;
+    padding: 50px;
+    position: relative;
+}
+a:link, a:visited {
+    background-color: goldenrod;
+    color: rgb(127, 127, 183);
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+  
+a:hover, a:active {
+    background-color: blanchedalmond;
+}
+nav ul {
+    list-style-type: none;
+}
+  
+nav ul li {
+    display: inline-block;
+}
+.body1 {
+    display: none;
+    position: absolute;
+    min-width: 50px;
+    max-width: 300px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: lightblue;
+    font-size: 14px;
+
+}
+.button1 {
+    padding: 13px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+  
+.body1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+.body1 a:hover {
+    background-color: lightblue;
+    color:rgb(127, 127, 183) ;
+}
+.li:hover .body1 {
+    display: block;
+}
+h1 {
+    text-align: center;
+    color:rgb(185, 99, 33);
+    font-size: 50px;
+    position: relative;
+    bottom: -30px;
+}
+.div1 {
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    position: relative;
+    bottom: -50px;
+}
+.div2{
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    position: relative;
+    bottom: -70px;
+}
+.div3 {
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    position: relative;
+    bottom: -90px;
+}
+.div4 {
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+}
+body {
+    background-color: burlywood;
+}

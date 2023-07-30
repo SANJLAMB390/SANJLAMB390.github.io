@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+    <link rel="stylesheet" href="bookings.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="restauranthome.html" id="Home">Home</a></li>
+            <li class="li"><a href="restaurantmenu.html" class="button1">Menu</a>
+                <div class="body1">
+                    <a href="ordernow.html">Order Now Online!</a>
+                    <a href="otherservices.html">Other Services</a>
+                </div>
+            </li>
+            <li><a href="bookings.html" id="Bookings">Bookings</a></li>
+            <li><a href="restaurantservices.html" id="Services">Services</a></li>
+        </ul>
+        <form action="post" id="Forms">
+            <h1>Thai Food Haven</h1>
+            <h2>Mon-Sun: 11:30 am-10 pm (Last Order: 9:30 pm)</h2>
+            <select name="table" id="tablenumber">
+                <option value="table1">Table 1</option>
+                <option value="table2">Table 2</option>
+                <option value="table3">Table 3</option>
+                <option value="table4">Table 4</option>
+                <option value="table5">Table 5</option>
+                <option value="table6">Table 6</option>
+                <option value="table7">Table 7</option>
+                <option value="table8">Table 8</option>
+                <option value="table9">Table 9</option>
+                <option value="table10">Table 10</option>
+            </select>
+            <br>
+            <br>
+            <select name="adults" id="adults">
+                <option value="adult1">1 adult</option>
+                <option value="adult2">2 adults</option>
+                <option value="adult3">3 adults</option>
+                <option value="adult4">4 adults</option>
+                <option value="adult5">5 adults</option>
+                <option value="adult6">6 adults</option>
+                <option value="adult7">7 adults</option>
+                <option value="adult8">8 adults</option>
+                <option value="adult9">9 adults</option>
+                <option value="adult10">10 adults</option>
+            </select>
+            <br>
+            <br>
+            <select name="children" id="children">
+                <option value="children1">0 children</option>
+                <option value="children2">1 child</option>
+                <option value="children3">2 children</option>
+                <option value="children4">3 children</option>
+                <option value="children5">4 children</option>
+                <option value="children6">5 children</option>
+                <option value="children7">6 children</option>
+                <option value="children8">7 children</option>
+                <option value="children9">8 children</option>
+            </select>
+            <br>
+            <br>
+            <p>
+                <input type="date" id="bookingdate" name="bookingdate" required>
+            </p>
+            <select name="time" id="time">
+                <option value="6pm">6:00 pm</option>
+                <option value="6:15pm">6:15 pm</option>
+                <option value="6:30pm">6:30 pm</option>
+                <option value="6:45pm">6:45 pm</option>
+            </select>
+            <br>
+            <br>
+            <select name="nameaddress" id="nameaddress">
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Mdm.">Mdm.</option>
+                <option value="Dr.">Dr.</option>
+                <option value="Mx.">Mx.</option>
+            </select>
+            <br>
+            <p>
+                <label for="First Name" class="FirstName">First Name: </label>
+                <input type="text" id="FirstName" name="First Name" placeholder="First Name" required>
+
+                <label for="Last Name" class="LastName">Last Name: </label>
+                <input type="text" id="LastName" name="Last Name" placeholder="Last Name" required>
+            </p>
+            <p>
+                <label for="email address" class="EmailAddress">Email Address: </label>
+                <input type="email" id="EmailAddress" name="Email Address" placeholder="Enter your email address"
+                    required>
+            </p>
+            <p>
+                <label for="phone number" class="PhoneNumber">Phone Number: </label>
+                <input type="number" id="PhoneNumber" name="Phone Number" placeholder="Phone Number" required>
+            </p>
+            <button type="submit">Submit Order</button>
+
+
+
+
+        </form>
+        <script>
+            document.getElementById('Forms').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Get the form element
+                const form = event.target;
+                const formData = new FormData(form);
+
+                // Convert FormData to a plain JavaScript object
+                const formDataObject = {};
+                formData.forEach((value, key) => {
+                    formDataObject[key] = value;
+                });
+
+                // Convert the form data object to a JSON string
+                const formDataJSON = JSON.stringify(formDataObject);
+
+                // Create a new window to display the form data
+                const newWindow = window.open('', '_blank');
+                newWindow.document.write('<h1>Reservation</h1>');
+                
+                // Display the form data in the new window
+                newWindow.document.write('<div>Table Number: ' + formData.get('table') + '</div>');
+                newWindow.document.write('<div>Number of Adults: ' + formData.get('adults') + '</div>');
+                newWindow.document.write('<div>Number of Children: ' + formData.get('children') + '</div>');
+                newWindow.document.write('<div>Date: ' + formData.get('bookingdate') + '</div>');
+                newWindow.document.write('<div>Time: ' + formData.get('time') + '</div>');
+                newWindow.document.write('<div>Name: ' + formData.get('nameaddress') + ' ' + formData.get('First Name') + ' ' + formData.get('Last Name') + '</div>');
+                newWindow.document.write('<div>Email Address: ' + formData.get('Email Address') + '</div>');
+                newWindow.document.write('<div>Phone Number: ' + formData.get('Phone Number') + '</div>');
+                
+                newWindow.document.close();
+            })
+        </script>
+
+</body>
+
+</html>

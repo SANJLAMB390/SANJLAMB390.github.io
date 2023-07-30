@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now!</title>
+    <link rel="stylesheet" href="ordernow.css">
+</head>
+
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="restauranthome.html" id="Home">Home</a></li>
+            <li class="li"><a href="restaurantmenu.html" class="button1">Menu</a>
+                <div class="body1">
+                    <a href="ordernow.html">Order Now Online!</a>
+                    <a href="otherservices.html">Other Services</a>
+                </div>
+            </li>
+            <li><a href="bookings.html" id="Bookings">Bookings</a></li>
+            <li><a href="restaurantservices.html" id="Services">Services</a></li>
+        </ul>
+        <h1>Order Now!</h1>
+        <div class="div1">This webpage would have a form below which you can order the food from our restaurant right
+            to the comfort of your homes! </div>
+        <div class="div2">An Important Information: LUNCH SPECIAL IS NOT APPLICABLE FOR ONLINE DELIVERY!</div>
+        <br>
+
+        <form id="Forms" action="ordernow.html" method="post">
+            <h2>Personal Particulars</h2>
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required>
+            </p>
+            <p>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <h2>Order(Must choose one from each section)</h2>
+            <p>
+                <label for="food">Fish: </label>
+                <select class="food1" name="food1">
+                    <option value="F1" selected>F1. Pla Lad Prik</option>
+                    <option value="F2" selected>F2. Pla Ka Prow</option>
+                    <option value="F3" selected>F3. Pla Curry </option>
+                    <option value="F4" selected>F4. Pla Ginger</option>
+                    <option value="F5" selected>F5. Pla Garlic and Pepper</option>
+                </select>
+            </p>
+            <p>
+                <label for="food">Vegetarian Entrées: </label>
+                <select class="food2" name="food2">
+                    <option value="V1" selected>V1. Spicy Eggplant</option>
+                    <option value="V2" selected>V2. Basil Garden</option>
+                    <option value="V3" selected>V3. Bok Choy Garlic Sauce </option>
+                    <option value="V4" selected>V4. Sautéed Mixed Vegetables</option>
+                    <option value="V5" selected>V5. Sautéed Cashew Nut</option>
+                </select>
+            </p>
+            <p>
+                <label for="food">Side Dishes:(if ordering Vegetarian Entrées) </label>
+                <select class="food3" name="food3" required>
+                    <option value="Vegetables" selected>Vegetables</option>
+                    <option value="Vegetarian duck" selected>Vegetarian Duck</option>
+                    <option value="Tofu" selected>Tofu</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="food">Specials: </label>
+                <select class="food4" name="food4" required>
+                    <option value="SP1">SP1. Peanut Chicken</option>
+                    <option value="SP2">SP2. Duck Noodle Soup</option>
+                    <option value="SP3">SP3. Khao Mok Gai</option>
+                    <option value="SP4">SP4. Siam Shrimp</option>
+                    <option value="SP5">SP5. Lobster Tail Lychee Curry</option>
+                </select>
+            </p>
+
+            <h2>Delivery/Pickup Information</h2>
+            <p>
+                <label for="address">Delivery Address:</label>
+                <input type="text" id="address" name="address" required>
+            </p>
+
+            <p>
+                <label for="delivery-date">Delivery Date:</label>
+                <input type="date" id="delivery-date" name="delivery-date" required>
+            </p>
+
+            <p>
+                <label for="delivery-time">Delivery Time:</label>
+                <input type="time" id="delivery-time" name="delivery-time" required>
+            </p>
+
+            <p>
+                <label for="pickup-time">Pickup Time:</label>
+                <input type="time" id="pickup-time" name="pickup-time" required>
+            </p>
+
+            <div id="payment-method">
+                <h2 id="h21">Payment method</h2>
+                <p>
+                    <label for="payment-cash">Cash on Delivery/Pickup</label>
+                    <input type="radio" id="payment-cash" name="payment-method" value="cash" required>
+                </p>
+                <p>
+                    <label for="payment-credit">Credit Card</label>
+                    <input type="radio" id="payment-credit" name="payment-method" value="credit" required>
+                </p>
+
+                <h2>Credit Card Details</h2>
+                <p>
+                    <label for="cardholder">Cardholder Name:</label>
+                    <input type="text" name="cardholder" id="cardholder">
+                </p>
+                <p>
+                    <label for="cardnumber">Card Number:</label>
+                    <input type="text" name="cardnumber" id="cardnumber">
+                </p>
+                <p>
+                    <label for="expiration">Expiration Date:</label>
+                    <input type="text" name="expiration" id="expiration" placeholder="MM/YYYY">
+                </p>
+                <p>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" name="cvv" id="cvv">
+                </p>
+            </div>
+
+            <button type="submit">Submit Order</button>
+        </form>
+
+        <script>
+
+            function calculateTotalAmount(food) {
+                if (food === "F1" || food === "F2" || food === "F3" || food === "F4" || food === "F5") {
+                    return 28.99;
+                } else if (food === "V1" || food === "V2" || food === "V3" || food === "V4" || food === "V5" || food === "Vegetables") {
+                    return 11.95;
+                } else if (food === "Vegetarian duck" || food === "Tofu") {
+                    return 12.95;
+                } else if (food === "SP1" || food === "SP2") {
+                    return 19.00;
+                } else if (food === "SP3") {
+                    return 22.00;
+                } else if (food === "SP4") {
+                    return 26.00;
+                } else if (food === "SP5") {
+                    return 29.00;
+                } else {
+                    return 0;
+                }
+            }
+
+            document.getElementById('Forms').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Get the form element
+                const form = event.target;
+                const formData = new FormData(form);
+
+                // Convert FormData to a plain JavaScript object
+                const formDataObject = {};
+                formData.forEach((value, key) => {
+                    formDataObject[key] = value;
+                });
+
+
+                // Get the selected food options
+                const food1Selection = formDataObject['food1'];
+                const food2Selection = formDataObject['food2'];
+                const food3Selection = formDataObject['food3'];
+                const food4Selection = formDataObject['food4'];
+
+                // Calculate the total price for each food item
+                const food1Price = calculateTotalAmount(food1Selection);
+                const food2Price = calculateTotalAmount(food2Selection);
+                const food3Price = calculateTotalAmount(food3Selection);
+                const food4Price = calculateTotalAmount(food4Selection);
+
+                // Calculate the total order price
+                const totalPrice = food1Price + food2Price + food3Price + food4Price;
+
+                // Convert the form data object to a JSON string
+                const formDataJSON = JSON.stringify(formDataObject);
+
+                // Create a new window to display the form data and the total price
+                const newWindow = window.open('', '_blank');
+                newWindow.document.write('<h1>Order Summary</h1>');
+                newWindow.document.write('<pre>' + formDataJSON + '</pre>');;
+
+                // Display all the form data
+                newWindow.document.write('<h2>Personal Particulars</h2>');
+                newWindow.document.write('<p>Name: ' + formDataObject['name'] + '</p>');
+                newWindow.document.write('<p>Phone Number: ' + formDataObject['phone'] + '</p>');
+                newWindow.document.write('<p>Email: ' + formDataObject['email'] + '</p>');
+                newWindow.document.write("<h2>Food Items and Price to be paid</h2>")
+                newWindow.document.write('<p>Selected Food Item 1: ' + food1Selection + ' - Price: $' + food1Price.toFixed(2) + '</p>');
+                newWindow.document.write('<p>Selected Food Item 2: ' + food2Selection + '</p>');
+                newWindow.document.write('<div>Along with Side Dishes: ' + food3Selection + ' - Price: $' + food3Price.toFixed(2) + '</div>');
+                newWindow.document.write('<p>Selected Food Item 4: ' + food4Selection + ' - Price: $' + food4Price.toFixed(2) + '</p>');
+                newWindow.document.write('<p>Total Price: $' + totalPrice.toFixed(2) + '</p>');
+                newWindow.document.write('<h2>Delivery/Pickup Information</h2>');
+                newWindow.document.write('<p>Delivery Address: ' + formDataObject['address'] + '</p>');
+                newWindow.document.write('<p>Delivery Date: ' + formDataObject['delivery-date'] + '</p>');
+                newWindow.document.write('<p>Delivery Time: ' + formDataObject['delivery-time'] + '</p>');
+                newWindow.document.write('<p>Pickup Time: ' + formDataObject['pickup-time'] + '</p>');
+                newWindow.document.write('<h2>Credit Card Details:</h2>');
+                newWindow.document.write('<p>Cardholder Name: ' + formDataObject["cardholder"] + '</p>')
+                newWindow.document.write('<p>Card Number: ' + formDataObject["cardnumber"] + '</p>');
+                newWindow.document.write('<p>Expiration Date: ' + formDataObject["expiration"] + '</p>');
+                newWindow.document.write('<p>CVV: ' + formDataObject["cvv"] + '</p>');
+                if(paymentMethod == "payment-cash")  {
+                    newWindow.document.write("")
+                }
+
+                else{
+                    newWindow.document.write();
+                }
+
+                newWindow.document.close();
+            });
+
+
+
+
+
+        </script>
+</body>
+
+</html>
